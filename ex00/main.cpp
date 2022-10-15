@@ -4,11 +4,14 @@
 
 int main () {
 
-	ClapTrap instance = ClapTrap();
+	ClapTrap claptrapA("Ruslan");
+	ClapTrap claptrapB("John Wick");
 
-	instance.setName("Ruslan");
 
-	instance.attack("Max");
+	claptrapA.attack(claptrapB.getName());
+	claptrapB.takeDamage(1);
+	claptrapB.beRepaired(1);
+	claptrapB.attack(claptrapA.getName());
 	
 
 	

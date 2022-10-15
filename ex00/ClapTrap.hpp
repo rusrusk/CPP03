@@ -6,7 +6,7 @@
 class ClapTrap {
 
 	public :
-			enum { HIT_POINTS = 10, ENERGY_POINTS = 10, ATTACK_DAMAGE = 1};
+			enum { HIT_POINTS = 10, ENERGY_POINTS = 10, ATTACK_DAMAGE = 4};
 			//Constructor
 			ClapTrap(std::string param_name);
 			ClapTrap();
@@ -19,7 +19,7 @@ class ClapTrap {
 			//Accessors
 			void 		setName(std::string name);
 			const std::string getName(void) const;
-			//member functions
+			//public member functions
 			void attack(const std::string &target);
 			void takeDamage(unsigned int amount);
 			void beRepaired(unsigned int amount);
