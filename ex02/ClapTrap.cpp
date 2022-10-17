@@ -118,13 +118,14 @@ void ClapTrap::beRepaired(unsigned int amount) {
                   << " hit points, thereby he has been already murdered!:(";
         std::cout << std::endl;
         Monitoring();
+        return;
     } else if (this->_energy_points  < 1) {
             std::cout << "ClapTrap " << this->_name
                     << " attempted to repair himself by ";
         std::cout << amount << " hit points, but he has " << this->_energy_points
                 << " energy points!:(";
         std::cout << std::endl;
-     
+        return;
     }
 }
 
