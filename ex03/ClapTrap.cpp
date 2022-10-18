@@ -15,18 +15,22 @@ ClapTrap::~ClapTrap() {
 };
 
 ClapTrap::ClapTrap(const ClapTrap &other) {
-    std::cout << "The ClapTrap " << this->_name << " wants to be the same as the ClapTrap " << other._name << "\n";
-   
-        this->_name = other._name;
-        this->_hit_points = other._hit_points;
-        this->_energy_points = other._energy_points;
-        this->_attack_damage = other._attack_damage;
-    }
+    std::cout << "The ClapTrap " << this->_name
+              << " wants to be the same as the ClapTrap " << other._name
+              << "\n";
+
+    this->_name = other._name;
+    this->_hit_points = other._hit_points;
+    this->_energy_points = other._energy_points;
+    this->_attack_damage = other._attack_damage;
+}
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &other) {
     if (this != &other) {
         std::cout << "Copy assignment operator was called!";
-        std::cout << "The ClapTrap " << this->_name << " wants to be the same as the ClapTrap " << other._name << std::endl;
+        std::cout << "The ClapTrap " << this->_name
+                  << " wants to be the same as the ClapTrap " << other._name
+                  << std::endl;
         this->_name = other._name;
         this->_hit_points = other._hit_points;
         this->_energy_points = other._energy_points;
@@ -34,20 +38,6 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other) {
     }
     return *this;
 }
-
-// void ClapTrap::setName(std::string param_name) { this->_name = param_name; }
-
-// void ClapTrap::setHitPoints(int param_hitpoints) {
-//     this->_hit_points = param_hitpoints;
-// }
-
-// void ClapTrap::setEnergyPoints(int param_energypoints) {
-//     this->_energy_points = param_energypoints;
-// }
-
-// void ClapTrap::setAttackDamage(int param_attackdamage) {
-//     this->_attack_damage = param_attackdamage;
-// }
 
 std::string ClapTrap::getName(void) const { return this->_name; }
 
@@ -79,8 +69,6 @@ void ClapTrap::attack(const std::string &target) {
     }
 }
 
-
-
 void ClapTrap::takeDamage(unsigned int amount) {
     this->_hit_points -= amount;
     if (this->_hit_points >= 1) {
@@ -98,7 +86,6 @@ void ClapTrap::takeDamage(unsigned int amount) {
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
-
     if (this->_hit_points >= 1 && this->_energy_points >= 1) {
         this->_hit_points += amount;
         this->_energy_points--;
@@ -119,19 +106,22 @@ void ClapTrap::beRepaired(unsigned int amount) {
         std::cout << std::endl;
         Monitoring();
         return;
-    } else if (this->_energy_points  < 1) {
-            std::cout << "ClapTrap " << this->_name
-                    << " attempted to repair himself by ";
-        std::cout << amount << " hit points, but he has " << this->_energy_points
-                << " energy points!:(";
+    } else if (this->_energy_points < 1) {
+        std::cout << "ClapTrap " << this->_name
+                  << " attempted to repair himself by ";
+        std::cout << amount << " hit points, but he has "
+                  << this->_energy_points << " energy points!:(";
         std::cout << std::endl;
         return;
     }
 }
 
 void ClapTrap::Monitoring() {
-    std::cout << COLOR_GREEN "CLAP [HP] = " << this->_hit_points << "/" << HIT_POINTS << COLOR_DEFAULT << " * ";
-    std::cout << COLOR_YELLOW << "[EP] = " << this->_energy_points << "/" << ENERGY_POINTS << COLOR_DEFAULT << " * ";
-    std::cout << COLOR_RED "[AD] = " << this->_attack_damage << "/" << ATTACK_DAMAGE << COLOR_DEFAULT;
+    std::cout << COLOR_GREEN "CLAP [HP] = " << this->_hit_points << "/"
+              << HIT_POINTS << COLOR_DEFAULT << " * ";
+    std::cout << COLOR_YELLOW << "[EP] = " << this->_energy_points << "/"
+              << ENERGY_POINTS << COLOR_DEFAULT << " * ";
+    std::cout << COLOR_RED "[AD] = " << this->_attack_damage << "/"
+              << ATTACK_DAMAGE << COLOR_DEFAULT;
     std::cout << std::endl;
 }

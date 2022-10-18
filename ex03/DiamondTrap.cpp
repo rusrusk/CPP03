@@ -10,11 +10,7 @@ DiamondTrap::DiamondTrap(std::string param_name)
     this->_attack_damage = FragTrap::ATTACK_DAMAGE;
 
     std::cout << "DiamondTrap " << param_name << " was created!" << std::endl;
-    // std::cout << "Fragtrap HP : " << FragTrap::HIT_POINTS << std::endl;
-    // std::cout << "ScavTrap HP : " << ScavTrap::ENERGY_POINTS << std::endl;
 }
-
-
 
 DiamondTrap::DiamondTrap(const DiamondTrap &other)
     : ClapTrap(other._name), FragTrap(other._name), ScavTrap(other._name) {
@@ -35,14 +31,15 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other) {
 }
 
 DiamondTrap::~DiamondTrap() {
-    std::cout << "DiamondTrap " << this->_name << " was destroyed!" << std::endl;
+    std::cout << "DiamondTrap " << this->_name << " was destroyed!"
+              << std::endl;
 }
 
 void DiamondTrap::whoAmI() {
-    std::cout << "DiamondTrap name is [" << this->_name
-              << "], if you don't know!" << std::endl;
-    std::cout << "ClapTrap    name is [" << ClapTrap::_name
-              << "], if you don't know!" << std::endl;
+    std::cout << "DiamondTrap name is [" << COLOR_MAGENTA << this->_name
+              << COLOR_DEFAULT << "], if you don't know!" << std::endl;
+    std::cout << "ClapTrap    name is [" << COLOR_MAGENTA << ClapTrap::_name;
+    std::cout << COLOR_DEFAULT << "], if you don't know!" << std::endl;
 }
 
 void DiamondTrap::Monitoring() {

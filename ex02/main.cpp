@@ -2,6 +2,7 @@
 #include "ScavTrap.hpp"
 
 int main() {
+    std::cout << COLOR_BLUE << std::string(50, '=') << COLOR_DEFAULT << std::endl;
     ClapTrap first("Ruslan");
     std::cout << "[first] name is		=	" << first.getName()
               << std::endl;
@@ -11,7 +12,7 @@ int main() {
               << first.getEnergyPoints() << " [EP] points" << std::endl;
     std::cout << "[first] " << first.getName() << " has	=	"
               << first.getAttackDamage() << "  [AD] points" << std::endl;
-	std::cout << std::string(50, '=') << std::endl;
+	std::cout << COLOR_BLUE << std::string(50, '=') << COLOR_DEFAULT << std::endl;
 
 
     ScavTrap second("Habibi");
@@ -23,7 +24,7 @@ int main() {
               << second.getEnergyPoints() << "  [EP] points" << std::endl;
     std::cout << "[second] " << second.getName() << " has	=	"
               << second.getAttackDamage() << "  [AD] points" << std::endl;
-	std::cout << std::string(50, '=') << std::endl;
+	std::cout << COLOR_BLUE << std::string(50, '=') << COLOR_DEFAULT << std::endl;
 
     FragTrap third("John Wick");
     std::cout << "[third] name is	        =	" << third.getName()
@@ -34,9 +35,9 @@ int main() {
               << third.getEnergyPoints() << "  [EP] points" << std::endl;
     std::cout << "[third] " << third.getName() << " has	=	"
               << third.getAttackDamage() << "   [AD] points" << std::endl;
-	std::cout << std::string(50, '=') << std::endl;
+	std::cout << COLOR_BLUE << std::string(50, '=') << COLOR_DEFAULT << std::endl;
 
-    third.highFiveGuys();
+    third.highFivesGuys();
     std::cout << std::string(50, '=') << std::endl;
 
     first.attack(second.getName());
@@ -71,7 +72,7 @@ int main() {
     third.takeDamage(100);
     std::cout << std::string(50, '=') << std::endl;
 
-    third.highFiveGuys();
+    third.highFivesGuys();
     std::cout << std::string(50, '=') << std::endl;
 
     third.beRepaired(1);
@@ -81,6 +82,6 @@ int main() {
     first.takeDamage(5);
     std::cout << std::string(50, '=') << std::endl;
 
-    third.highFiveGuys();
+    third.highFivesGuys();
     std::cout << std::string(50, '=') << std::endl;
 }

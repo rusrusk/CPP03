@@ -8,17 +8,13 @@ ClapTrap::ClapTrap(std::string param_name)
     std::cout << this->_name << " was created." << std::endl;
 }
 
-// Constructor initializing the attributes
-ClapTrap::ClapTrap() {}
-
-ClapTrap::~ClapTrap() { std::cout << "Destructor called" << std::endl; }
+ClapTrap::~ClapTrap() {
+    std::cout << this->_name << " Destructor called" << std::endl;
+}
 
 // Copy constructor
 ClapTrap::ClapTrap(const ClapTrap &other) {
     std::cout << "Copy constructor called" << std::endl;
-    // this->_hit_points = other._hit_points;
-    // this->_energy_points = other._energy_points;
-    // this->_attack_damage = other._attack_damage;
     *this = other;
 }
 
@@ -38,6 +34,12 @@ void ClapTrap::setName(std::string name) { this->_name = name; }
 
 const std::string ClapTrap::getName(void) const { return this->_name; }
 
+int ClapTrap::getHitPoints(void) const { return this->_hit_points; }
+
+int ClapTrap::getEnergyPoints(void) const { return this->_energy_points; }
+
+int ClapTrap::getAttackDamage(void) const { return this->_attack_damage; }
+
 void ClapTrap::attack(const std::string &target) {
     if (this->_hit_points < 1) {
         std::cout << "ClapTrap " << this->_name;
@@ -55,9 +57,8 @@ void ClapTrap::attack(const std::string &target) {
     } else if (this->_hit_points >= 1 && this->_energy_points >= 1)
 
         this->_energy_points--;
-    std::cout << "ClapTrap " << this->_name << " attacks " << target << std::endl;
-            //   << ", causing ";
-    // std::cout << this->_attack_damage << " points of damage!" << std::endl;
+    std::cout << "ClapTrap " << this->_name << " attacks " << target
+              << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {

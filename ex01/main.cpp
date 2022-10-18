@@ -1,6 +1,7 @@
 #include "ScavTrap.hpp"
 
 int main() {
+    std::cout << COLOR_BLUE << std::string(50, '=') << COLOR_DEFAULT << std::endl;
     ClapTrap first("Ruslan");
     std::cout << "[first] name is		=	" << first.getName()
               << std::endl;
@@ -10,7 +11,7 @@ int main() {
               << first.getEnergyPoints() << " [EP] points" << std::endl;
     std::cout << "[first] " << first.getName() << " has	=	"
               << first.getAttackDamage() << "  [AD] points" << std::endl;
-	std::cout << std::string(50, '=') << std::endl;
+	std::cout << COLOR_BLUE << std::string(50, '=') << COLOR_DEFAULT << std::endl;
 
 
     ScavTrap second("Habibi");
@@ -22,7 +23,7 @@ int main() {
               << second.getEnergyPoints() << "  [EP] points" << std::endl;
     std::cout << "[second] " << second.getName() << " has	=	"
               << second.getAttackDamage() << "  [AD] points" << std::endl;
-	std::cout << std::string(50, '=') << std::endl;
+	std::cout << COLOR_BLUE << std::string(50, '=') << COLOR_DEFAULT << std::endl;
 
     first.attack(second.getName());
     second.takeDamage(20);
